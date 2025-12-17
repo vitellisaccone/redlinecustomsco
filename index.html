@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redline Customs | Window Tinting and Vinyl Wrap in San Diego CA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Redline Customs provides window tinting, vinyl wrap, and protective film services across San Diego CA and nearby cities. Explore 16 services and 9 local areas served." />
+
+  <style>
+    :root{
+      --bg: #070b18;
+      --panel: #0f172a;
+      --panel2: #0b1224;
+      --card: #ffffff;
+      --soft: #f3f4f6;
+      --text: #111827;
+      --muted: #4b5563;
+      --muted2: #6b7280;
+      --line: #e5e7eb;
+      --brand: #f97316;
+      --brand2: #ff2d5e;
+      --accent: #2563eb;
+      --shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+      --shadow2: 0 28px 60px rgba(15, 23, 42, 0.22);
+      --radius: 1.35rem;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Subtle background texture */
+    .page-bg{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 45, 94, 0.14), transparent 42%),
+        radial-gradient(circle at 85% 20%, rgba(37, 99, 235, 0.16), transparent 46%),
+        radial-gradient(circle at 60% 88%, rgba(249, 115, 22, 0.14), transparent 45%),
+        linear-gradient(180deg, rgba(2, 6, 23, 0.0), rgba(2, 6, 23, 0.65));
+      filter: saturate(1.1);
+      z-index: 0;
+    }
+
+    /* Sticky nav */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(2, 6, 23, 0.55);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .topbar-inner{
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brandmark{
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: #f9fafb;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .branddot{
+      width: 12px;
+      height: 12px;
+      border-radius: 9999px;
+      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,0.2)),
+                  linear-gradient(135deg, var(--brand2), var(--brand));
+      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
+    }
+
+    .navlinks{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .navlinks a{
+      font-size: 0.88rem;
+      color: rgba(249, 250, 251, 0.86);
+      padding: 0.4rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(15, 23, 42, 0.35);
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .navlinks a:hover{
+      background: rgba(15, 23, 42, 0.6);
+      border-color: rgba(148, 163, 184, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .navbtn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.55rem 0.95rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      color: #111827;
+      background: linear-gradient(135deg, var(--brand), #ffb36b);
+      box-shadow: 0 18px 35px rgba(249, 115, 22, 0.28);
+      transition: transform 180ms ease, filter 180ms ease;
+      white-space: nowrap;
+    }
+
+    .navbtn:hover{ transform: translateY(-1px); filter: brightness(0.98); }
+
+    /* Hero */
+    .hero{
+      position: relative;
+      padding: 4.8rem 1.25rem 4.2rem;
+      color: #f9fafb;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 45, 94, 0.26), transparent 55%),
+        radial-gradient(circle at 86% 24%, rgba(37, 99, 235, 0.25), transparent 58%),
+        radial-gradient(circle at 58% 90%, rgba(249, 115, 22, 0.22), transparent 62%),
+        linear-gradient(180deg, rgba(2, 6, 23, 0.65), rgba(2, 6, 23, 0.95));
+      z-index: -3;
+    }
+
+    .glow{
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 9999px;
+      filter: blur(14px);
+      opacity: 0.55;
+      z-index: -2;
+      animation: floaty 9.5s ease-in-out infinite;
+    }
+
+    .glow.one{
+      left: -140px;
+      top: -170px;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 45, 94, 0.9), rgba(255, 45, 94, 0.0) 60%);
+    }
+
+    .glow.two{
+      right: -160px;
+      top: -120px;
+      background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.0) 60%);
+      animation-delay: 1.6s;
+    }
+
+    .glow.three{
+      left: 35%;
+      bottom: -240px;
+      background: radial-gradient(circle at 30% 30%, rgba(249, 115, 22, 0.85), rgba(249, 115, 22, 0.0) 60%);
+      animation-delay: 3.2s;
+    }
+
+    @keyframes floaty{
+      0% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(0,18px,0) scale(1.03); }
+      100% { transform: translate3d(0,0,0) scale(1); }
+    }
+
+    .hero-inner{
+      max-width: 1150px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+      gap: 2.6rem;
+      align-items: center;
+    }
+
+    .hero-tag{
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1{
+      font-size: 2.75rem;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.015em;
+    }
+
+    .hero p{
+      font-size: 1.02rem;
+      color: rgba(229, 231, 235, 0.92);
+      margin-bottom: 1.2rem;
+      max-width: 56ch;
+    }
+
+    .hero-list{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.65rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-pill{
+      font-size: 0.88rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.26);
+      color: rgba(249, 250, 251, 0.9);
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .hero-pill:hover{
+      transform: translateY(-1px);
+      border-color: rgba(148, 163, 184, 0.45);
+    }
+
+    .hero-cta{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .btn-primary{
+      background: linear-gradient(135deg, var(--brand), #ffb36b);
+      color: #111827;
+      padding: 0.9rem 1.65rem;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 20px 40px rgba(249, 115, 22, 0.26);
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .btn-primary:hover{ transform: translateY(-1px); filter: brightness(0.98); }
+
+    .btn-secondary{
+      background: rgba(255, 255, 255, 0.08);
+      color: #f9fafb;
+      padding: 0.9rem 1.35rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .btn-secondary:hover{
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-note{
+      font-size: 0.88rem;
+      color: rgba(209, 213, 219, 0.9);
+    }
+
+    .hero-card{
+      background: rgba(15, 23, 42, 0.72);
+      border-radius: var(--radius);
+      padding: 1.65rem 1.5rem;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 28px 60px rgba(15, 23, 42, 0.58);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:
+        linear-gradient(135deg, rgba(255, 45, 94, 0.22), transparent 45%),
+        linear-gradient(315deg, rgba(37, 99, 235, 0.18), transparent 48%);
+      z-index: -1;
+    }
+
+    .hero-card h3{
+      color: #f9fafb;
+      font-size: 1.06rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card ul{ list-style: none; padding-left: 0; margin-bottom: 0.75rem; }
+    .hero-card li{
+      font-size: 0.92rem;
+      color: rgba(229, 231, 235, 0.92);
+      margin-bottom: 0.48rem;
+      padding-left: 0.75rem;
+      position: relative;
+    }
+
+    .hero-card li::before{
+      content:"";
+      position:absolute;
+      left: 0;
+      top: 0.62rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, var(--brand2), var(--brand));
+      box-shadow: 0 10px 18px rgba(255, 45, 94, 0.18);
+    }
+
+    .hero-badge-row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.65rem;
+    }
+
+    .hero-badge{
+      font-size: 0.76rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      color: rgba(229, 231, 235, 0.92);
+      background: rgba(2, 6, 23, 0.18);
+    }
+
+    /* Wrapper and sections */
+    .wrapper{
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.25rem 3.25rem;
+      background: var(--soft);
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+      box-shadow: 0 -18px 60px rgba(2, 6, 23, 0.35);
+    }
+
+    section{ padding: 3.1rem 0 0; }
+    .section-inner{ max-width: 1100px; margin: 0 auto; }
+
+    .section-title{
+      font-size: 1.82rem;
+      margin-bottom: 0.85rem;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .section-subtitle{
+      font-size: 0.98rem;
+      color: var(--muted2);
+      margin-bottom: 1.65rem;
+      max-width: 85ch;
+    }
+
+    .divider{
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(17, 24, 39, 0.14), transparent);
+      margin-top: 2.1rem;
+    }
+
+    .two-col{
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.85rem;
+      align-items: start;
+    }
+
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      position: relative;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow2);
+      border-color: rgba(37, 99, 235, 0.20);
+    }
+
+    .muted{ color: var(--muted); font-size: 0.96rem; }
+
+    .pill-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.05rem;
+    }
+
+    .pill{
+      padding: 0.38rem 0.92rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      border: 1px solid #d1d5db;
+      color: var(--muted);
+      background: #f9fafb;
+    }
+
+    /* Services layout */
+    .subservices-layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+      gap: 1.9rem;
+      align-items: start;
+    }
+
+    .subservices-columns{ columns: 2; column-gap: 1.7rem; }
+
+    .subservice-block{
+      break-inside: avoid;
+      margin-bottom: 1.2rem;
+      background: #ffffff;
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.2rem;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 26px rgba(15, 23, 42, 0.06);
+      position: relative;
+      overflow: hidden;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .subservice-block:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.10);
+      border-color: rgba(249, 115, 22, 0.22);
+    }
+
+    .subservice-block::before{
+      content:"";
+      position:absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(255, 45, 94, 0.06), transparent 45%),
+        linear-gradient(315deg, rgba(37, 99, 235, 0.06), transparent 48%);
+      pointer-events:none;
+      opacity: 0.9;
+    }
+
+    .subservice-label{
+      position: relative;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 0.3rem;
+    }
+
+    .subservice-block h3{
+      position: relative;
+      font-size: 1.04rem;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+
+    .subservice-block p{
+      position: relative;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+    .subservices-highlight{
+      background: linear-gradient(135deg, #111827, #0b1224);
+      color: #e5e7eb;
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      position: sticky;
+      top: 88px;
+    }
+
+    .subservices-highlight h3{
+      font-size: 1.12rem;
+      margin-bottom: 0.8rem;
+      color: #f9fafb;
+    }
+
+    .subservices-highlight p{
+      font-size: 0.94rem;
+      margin-bottom: 0.9rem;
+      color: rgba(229, 231, 235, 0.92);
+    }
+
+    /* Why section */
+    .three-col{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.35rem;
+      margin-top: 1.2rem;
+    }
+
+    .three-col h3{
+      font-size: 1.06rem;
+      margin-bottom: 0.45rem;
+      color: var(--text);
+    }
+
+    .three-col p{
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+    /* Locations */
+    .locations-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.45rem;
+    }
+
+    .location-item{
+      background: #ffffff;
+      border-radius: 1.2rem;
+      padding: 1.1rem 1.25rem;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 22px rgba(15, 23, 42, 0.05);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .location-item:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 20px 34px rgba(15, 23, 42, 0.10);
+      border-color: rgba(37, 99, 235, 0.20);
+    }
+
+    .location-label{
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 0.35rem;
+    }
+
+    .location-item h3{
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: var(--text);
+    }
+
+    .location-item p{
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    /* Map */
+    .map-frame{
+      margin-top: 1.5rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.18);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    /* FAQs */
+    .faq-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.2rem;
+    }
+
+    .faq-item h3{
+      font-size: 1.03rem;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+
+    .faq-item p{
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+    /* CTA and footer */
+    .cta-section{
+      position: relative;
+      z-index: 2;
+      padding: 3rem 1.25rem 2.2rem;
+    }
+
+    .cta-box{
+      max-width: 1100px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #111827, #1f2937);
+      border-radius: 1.7rem;
+      padding: 2.35rem 2.05rem;
+      color: #f9fafb;
+      box-shadow: 0 28px 58px rgba(15, 23, 42, 0.55);
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cta-box::before{
+      content:"";
+      position:absolute;
+      inset: -2px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 45, 94, 0.18), transparent 42%),
+        radial-gradient(circle at 85% 20%, rgba(37, 99, 235, 0.16), transparent 44%),
+        radial-gradient(circle at 60% 90%, rgba(249, 115, 22, 0.14), transparent 45%);
+      pointer-events:none;
+    }
+
+    .cta-box h2{
+      position: relative;
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .cta-box p{
+      position: relative;
+      font-size: 0.97rem;
+      color: rgba(229, 231, 235, 0.92);
+      margin-bottom: 1rem;
+    }
+
+    .cta-meta{
+      position: relative;
+      font-size: 0.84rem;
+      color: rgba(209, 213, 219, 0.9);
+      margin-top: 0.4rem;
+    }
+
+    .footer{
+      max-width: 1100px;
+      margin: 1.5rem auto 0;
+      padding: 1.25rem 1.25rem 0;
+      border-top: 1px solid rgba(229, 231, 235, 0.25);
+      font-size: 0.9rem;
+      color: rgba(209, 213, 219, 0.92);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .social-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .social-row a{
+      color: rgba(249, 250, 251, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      background: rgba(15, 23, 42, 0.35);
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .social-row a:hover{
+      transform: translateY(-1px);
+      background: rgba(15, 23, 42, 0.55);
+      border-color: rgba(148, 163, 184, 0.35);
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px){
+      .hero-inner{ grid-template-columns: minmax(0, 1fr); }
+      .two-col, .subservices-layout, .cta-box{ grid-template-columns: minmax(0, 1fr); }
+      .subservices-columns{ columns: 1; }
+      .subservices-highlight{ position: relative; top: auto; }
+      .navlinks{ display: none; }
+    }
+
+    @media (max-width: 520px){
+      .hero h1{ font-size: 2.15rem; }
+      .topbar-inner{ padding: 0.75rem 1rem; }
+      .wrapper{ border-top-left-radius: 1.4rem; border-top-right-radius: 1.4rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-bg"></div>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brandmark">
+        <span class="branddot"></span>
+        <span>Redline Customs</span>
+      </div>
+
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why us</a>
+        <a href="#locations">Locations</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#map">Map</a>
+      </div>
+
+      <button class="navbtn" onclick="window.location.href='#cta'">Request a quote</button>
+    </div>
+  </div>
+
+  <div class="hero" id="top">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+    <div class="glow three"></div>
+
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">Window tinting, vinyl wrap, and protective films</div>
+        <h1>Clean, Comfortable, And Confident Driving With Redline Customs In San Diego, CA</h1>
+        <p>
+          If you have ever grabbed a steering wheel that feels hot, squinted through glare, or noticed your interior fading,
+          you already know what sunlight and road life can do. Redline Customs helps drivers solve those everyday problems
+          with window tinting, vinyl wrap, and specialty film services built around real use, clear visibility, and a finish that looks intentional.
+        </p>
+
+        <div class="hero-list">
+          <span class="hero-pill">Window tint and window film</span>
+          <span class="hero-pill">Vinyl wrap and chrome delete</span>
+          <span class="hero-pill">Windshield protection film</span>
+          <span class="hero-pill">Fleet vehicle tinting</span>
+          <span class="hero-pill">Mobile car services</span>
+        </div>
+
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="window.location.href='#cta'">Request a quote</button>
+          <button class="btn-secondary" onclick="window.location.href='https://redlinecustomsco.com/'">Visit the main site</button>
+          <p class="hero-note">A simple plan, clear expectations, and work that holds up in real traffic and real heat.</p>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>What customers usually want most</h3>
+        <ul>
+          <li>Less heat in the cabin and better comfort</li>
+          <li>Reduced glare for day driving and sunset commutes</li>
+          <li>Privacy without making visibility feel unsafe</li>
+          <li>Paint safe styling changes that look clean</li>
+          <li>Protection against chips and daily wear</li>
+        </ul>
+        <div class="hero-badge-row">
+          <span class="hero-badge">Automotive window tinting</span>
+          <span class="hero-badge">Vinyl wrap services</span>
+          <span class="hero-badge">Trusted local installer</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="wrapper">
+
+    <section id="about">
+      <div class="section-inner two-col">
+        <div>
+          <h2 class="section-title">About This Website</h2>
+          <p class="section-subtitle">
+            A clear place to understand services, compare options, and find local help without guessing.
+          </p>
+          <div class="card">
+            <p class="muted">
+              This website is built to make your decision easier. Instead of vague promises, you will find practical explanations of each service,
+              what it helps with, and when it is a smart choice. If you are searching for window tint in San Diego or planning a vinyl wrap in San Diego CA,
+              the goal here is to give you a simple path from questions to a confident plan.
+            </p>
+            <p class="muted" style="margin-top: 0.95rem;">
+              For a complete view of the brand and the latest service updates, you can visit the main homepage at
+              <a href="https://redlinecustomsco.com/" target="_blank" rel="noopener">Redline Customs Co</a>.
+              Many customers start there, then come back to this page when they want a quick overview that still feels detailed.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 0.55rem;">How to use this page</h3>
+          <p class="muted">
+            First, skim the service list and pick the results you care about most, like heat reduction, privacy, or a clean new look.
+            Then, check the locations section to find the nearest city page. Finally, use the map and CTA to reach out with your vehicle details.
+          </p>
+          <p class="muted" style="margin-top: 0.95rem;">
+            Tip from real installs: customers who tell us their driving routine, parking situation, and comfort goals usually end up happier with the film choice.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Simple service explanations</span>
+            <span class="pill">Local area coverage</span>
+            <span class="pill">Clear next steps</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+    </section>
+
+    <section id="services">
+      <div class="section-inner">
+        <h2 class="section-title">All 16 Services Explained</h2>
+        <p class="section-subtitle">
+          Each service below is written in a practical way so you can match the option to your vehicle, your goals, and your daily driving.
+        </p>
+
+        <div class="subservices-layout">
+          <div class="subservices-columns">
+
+            <div class="subservice-block">
+              <div class="subservice-label">Core comfort upgrade</div>
+              <h3>1) Window Tinting</h3>
+              <p>
+                Window tinting is one of the quickest ways to improve daily comfort. It reduces glare, helps control cabin heat,
+                and blocks UV exposure that fades seats and trim. A good install also looks clean, with smooth edges and clear visibility.
+                If your priority is a cooler drive and a more relaxed commute, this is usually the first service to consider.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Style and paint protection</div>
+              <h3>2) Vinyl Wrap</h3>
+              <p>
+                Vinyl wrap lets you change the look of your vehicle while keeping the original paint protected underneath.
+                It is popular for color changes, satin and gloss finishes, and custom looks without permanent paint work.
+                The best wraps feel intentional, with tight lines and clean corners that hold up through washing and real road time.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Business and work vehicles</div>
+              <h3>3) Fleet Vehicle Tinting</h3>
+              <p>
+                Fleet vehicle tinting supports driver comfort, reduces glare, and helps keep company vehicles looking consistent.
+                For many businesses, it also protects equipment from sun exposure and improves daily productivity.
+                If you manage multiple vehicles, a planned fleet tint schedule keeps results uniform and reduces downtime.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Clean accents and branding</div>
+              <h3>4) Vinyl Stripes And Graphics</h3>
+              <p>
+                Vinyl stripes and graphics add personality, branding, or performance style without heavy modification.
+                This service works well for subtle accents, racing stripes, and custom layouts that match your vehicle lines.
+                The goal is a precise cut, strong adhesion, and a finish that looks factory clean, not patched or rushed.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Sun safety and interior life</div>
+              <h3>5) UV Protection Films</h3>
+              <p>
+                UV protection films help block ultraviolet exposure that can damage interior materials and impact comfort.
+                If you park outside often, this is a smart choice because it slows fading and wear over time.
+                Many drivers notice the difference most on dashboards, leather, and areas that normally feel harsh in bright sun.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Privacy with a styled look</div>
+              <h3>6) Decorative Window Film</h3>
+              <p>
+                Decorative window film is ideal when you want privacy or a design effect without making the glass feel overly dark.
+                It can be used for branding, a frosted look, or a clean pattern that still allows light.
+                It is a popular option for commercial glass and certain custom vehicle projects where style matters.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Glare control and daytime privacy</div>
+              <h3>7) Reflective Window Film</h3>
+              <p>
+                Reflective window film helps reduce glare and can improve daytime privacy by reflecting light outward.
+                Drivers often like it because it feels cooler and easier on the eyes during long drives.
+                The key is choosing the right level so it looks balanced and still supports safe visibility.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Advanced heat control</div>
+              <h3>8) High Performance Film</h3>
+              <p>
+                High performance film is built for drivers who want stronger heat control while keeping clarity and a refined look.
+                It is a smart pick when you spend a lot of time in the car, drive in strong sun, or want comfort without going too dark.
+                This option is often paired with a simple discussion about your commute and parking habits.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Travel comfort</div>
+              <h3>9) RV Window Tint</h3>
+              <p>
+                RV window tint helps manage heat and glare during long trips and extended parking.
+                It protects interior surfaces, improves comfort for passengers, and makes the space feel more stable in bright conditions.
+                If your RV is used in warmer months or sits in open sun, tint becomes a practical upgrade, not just a cosmetic one.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Outside graphics, inside visibility</div>
+              <h3>10) Perforated Window Film</h3>
+              <p>
+                Perforated window film is often used for advertising or privacy, because it can show a graphic from the outside
+                while still allowing a view from inside. It works well for business vehicles and commercial windows.
+                The important part is proper alignment and clean application so the message looks sharp and professional.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Premium tint technology</div>
+              <h3>11) Ceramic Film</h3>
+              <p>
+                Ceramic film is a premium option known for strong heat rejection, UV blocking, and excellent clarity.
+                Many drivers choose it when they want comfort upgrades without sacrificing a clean look.
+                It is also a common pick for people who want a long term solution and prefer a refined finish over a heavy dark appearance.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Precision fit finish</div>
+              <h3>12) Custom Cut Film</h3>
+              <p>
+                Custom cut film focuses on accuracy. The goal is a precise fit that follows window shapes cleanly
+                and avoids sloppy edges. This matters when you care about the final look up close.
+                It is also helpful for vehicles with unique glass shapes where careful fitting makes a noticeable difference.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Storefront and vehicle branding</div>
+              <h3>13) Window Graphics</h3>
+              <p>
+                Window graphics help businesses stand out, share services, and build trust through clear branding.
+                A good design should be easy to read, well placed, and durable against sun and washing.
+                If you want to turn glass into a marketing asset without looking cluttered, graphics are a simple, effective move.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Modern trim styling</div>
+              <h3>14) Chrome Delete</h3>
+              <p>
+                Chrome delete updates the look of your vehicle by changing bright trim into a sleek finish, often black or a matching tone.
+                It is popular for modern builds, sport looks, and drivers who want cleaner lines.
+                When done right, it looks like the vehicle was designed that way, not like an afterthought.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Road chip defense</div>
+              <h3>15) Windshield Protection</h3>
+              <p>
+                Windshield protection film is designed to help reduce damage from small chips, debris, and daily road wear.
+                If you drive highways often or deal with loose gravel routes, this service can add peace of mind.
+                It is not about changing the look, it is about keeping visibility clear and reducing the risk of sudden glass issues.
+              </p>
+            </div>
+
+            <div class="subservice-block">
+              <div class="subservice-label">Convenience and flexible scheduling</div>
+              <h3>16) Mobile Car Services</h3>
+              <p>
+                Mobile car services are helpful when your schedule is tight or you want work completed at a preferred location.
+                The goal stays the same: careful preparation, clean installation, and a professional finish.
+                If you want mobile window tinting or film service without sacrificing quality, mobile options make it easier to get it done.
+              </p>
+            </div>
+
+          </div>
+
+          <aside class="subservices-highlight">
+            <h3>What makes these services rank and convert</h3>
+            <p>
+              People rarely search for just one thing. Someone might start with window tinting San Diego CA, then realize they also need
+              glare control, UV protection, and a cleaner exterior look. That is why this page keeps each service practical and easy to compare.
+            </p>
+            <p>
+              Real world example: drivers who commute during late afternoon often complain about harsh glare. A smart film choice solves that fast,
+              and it also protects the interior. When the benefit is felt daily, customers see it as a quality upgrade, not just a purchase.
+            </p>
+            <p>
+              If you want a quick conversation about what fits your goals, Click here <a href="https://redlinecustomsco.com/" target="_blank" rel="noopener">Redline Customs Co</a> or jump to the CTA section below and share your vehicle and priorities.
+            </p>
+          </aside>
+        </div>
+
+        <div class="divider"></div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="section-inner">
+        <h2 class="section-title">Why We Are Trusted And Why Many Customers Come Back</h2>
+        <p class="section-subtitle">
+          Better results come from planning, clean installation, and honest guidance, not from pushing one option for everyone.
+        </p>
+
+        <div class="card">
+          <div class="three-col">
+            <div>
+              <h3>We match film to your real driving</h3>
+              <p>
+                We ask simple questions about your commute, parking, and comfort goals. That keeps you from overpaying
+                for features you will not use, and it prevents choosing a film that does not solve your actual problem.
+              </p>
+            </div>
+            <div>
+              <h3>Clean work that looks intentional</h3>
+              <p>
+                The small details matter, straight edges, consistent coverage, and a finish that holds up.
+                Whether it is chrome delete or window graphics, the goal is a professional look that stays clean over time.
+              </p>
+            </div>
+            <div>
+              <h3>Clear expectations and honest timelines</h3>
+              <p>
+                Customers appreciate knowing what to expect. We focus on clear scheduling, realistic curing guidance,
+                and simple aftercare tips so the result stays strong long after the install is done.
+              </p>
+            </div>
+          </div>
+
+          <div class="pill-row">
+            <span class="pill">Comfort focused recommendations</span>
+            <span class="pill">Style upgrades without guesswork</span>
+            <span class="pill">Commercial and fleet friendly options</span>
+            <span class="pill">Mobile service when it fits</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+      </div>
+    </section>
+
+    <section id="locations">
+      <div class="section-inner">
+        <h2 class="section-title">Our Locations And Service Areas</h2>
+        <p class="section-subtitle">
+          We serve multiple nearby cities, plus San Diego, CA which is covered on the homepage. Use the links below to explore each area page.
+        </p>
+
+        <div class="locations-grid">
+          <div class="location-item">
+            <div class="location-label">Primary service area</div>
+            <h3>San Diego, CA</h3>
+            <p>
+              Looking for window tint in San Diego or vinyl wrap in San Diego? Start here:
+              <a href="https://redlinecustomsco.com/" target="_blank" rel="noopener">Redline Customs homepage</a>.
+            </p>
+          </div>
+
+          <div class="location-item">
+            <div class="location-label">City page</div>
+            <h3>Encinitas, CA</h3>
+            <p><a href="https://redlinecustomsco.com/locations/encinitas-ca/" target="_blank" rel="noopener">View Encinitas location page</a></p>
+          </div>
+
+          <div class="location-item">
+            <div class="location-label">City page</div>
+            <h3>Miramar, CA</h3>
+            <p><a href="https://redlinecustomsco.com/locations/miramar-ca/" target="_blank" rel="noopener">View Miramar location page</a></p>
+          </div>
+
+          <div class="location-item">
+            <div class="location-label">City page</div>
+            <h3>Escondido, CA</h3>
+            <p><a href="https://redlinecustomsco.com/locations/escondido-ca/" target="_blank" rel="noopener">View Escondido location page</a></p>
+          </div>
+
+          <div class="location-item">
+            <div class="location-label">City page</div>
+            <h3>La Jolla, CA</h3>
+            <p><a href="https://redlinecustomsco.com/locations/la-jolla-ca/" target="_blank" rel="noopener">View La Jolla location page</a></p>
+          </div>
+
+          <div class="location-item">
+            <div class="location-label">City page</div>
+            <h3>Carlsbad, CA</h3>
+            <p><a href="https://redlinecustomsco.com/locations/carlsbad-ca/" target="_blank" rel="noopener">View Carlsbad location page</a></p>
+          </div>
+
+          <div class="location-item">
+            <div class="location-label">City page</div>
+            <h3>Del Mar, CA</h3>
+            <p><a href="https://redlinecustomsco.com/locations/del-mar-ca/" target="_blank" rel="noopener">View Del Mar location page</a></p>
+          </div>
+
+          <div class="location-item">
+            <div class="location-label">City page</div>
+            <h3>Vista, CA</h3>
+            <p><a href="https://redlinecustomsco.com/locations/vista-ca/" target="_blank" rel="noopener">View Vista location page</a></p>
+          </div>
+
+          <div class="location-item">
+            <div class="location-label">City page</div>
+            <h3>San Marcos, CA</h3>
+            <p><a href="https://redlinecustomsco.com/locations/san-marcos-ca/" target="_blank" rel="noopener">View San Marcos location page</a></p>
+          </div>
+
+          <div class="location-item">
+            <div class="location-label">City page</div>
+            <h3>Oceanside, CA</h3>
+            <p><a href="https://redlinecustomsco.com/locations/oceanside-ca/" target="_blank" rel="noopener">View Oceanside location page</a></p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+      </div>
+    </section>
+
+    <section id="endures">
+      <div class="section-inner two-col">
+        <div>
+          <h2 class="section-title">What Your Vehicle Endures Before Expert Window Tinting</h2>
+          <p class="section-subtitle">
+            Most vehicles show sun damage slowly, until one day it feels obvious. Tinting is often the fix that makes daily driving feel easier.
+          </p>
+          <div class="card">
+            <p class="muted">
+              Your vehicle deals with intense sun exposure, temperature swings, glare, and daily abrasion from dust and road traffic.
+              Even when the paint looks fine, the interior can quietly take a beating. Seats fade, dashboards dry out, and the cabin feels hotter than it should.
+              Add reflective surfaces on the road and you get eye strain that makes driving feel tiring.
+            </p>
+            <p class="muted" style="margin-top: 0.95rem;">
+              Professional automotive window tinting reduces that load. It is not just about appearance. It is about comfort, visibility, and keeping your car feeling newer.
+              When tint is chosen based on how you drive, it becomes one of the most practical upgrades you can make.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 0.55rem;">Signs you may need tint or film</h3>
+          <ul style="color: #4b5563; font-size: 0.92rem; padding-left: 1.1rem;">
+            <li>You feel heat through the glass even with AC running</li>
+            <li>Sun glare makes it hard to see during peak hours</li>
+            <li>Your interior is fading or drying out</li>
+            <li>You want more privacy in traffic or parking lots</li>
+            <li>You are adding styling upgrades like wrap or chrome delete</li>
+          </ul>
+          <p class="muted" style="margin-top: 0.95rem;">
+            A simple conversation about your goals usually points to the right film choice quickly.
+          </p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+    </section>
+
+    <section id="map">
+      <div class="section-inner">
+        <h2 class="section-title">Our Map</h2>
+        <p class="section-subtitle">
+          Use the map to confirm the Redline Customs location and plan your visit or service discussion.
+        </p>
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4063.744841233142!2d-117.12213004494069!3d33.020049482022756!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c78af3a76299%3A0x1dba3adb8918a4d1!2sRedline%20Customs!5e1!3m2!1sen!2s!4v1765948485127!5m2!1sen!2s"
+                  width="600" height="450" style="border:0; width: 100%; height: 450px;"
+                  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="divider"></div>
+      </div>
+    </section>
+
+    <section id="faqs">
+      <div class="section-inner">
+        <h2 class="section-title">FAQs That Can Rank</h2>
+        <p class="section-subtitle">
+          Quick answers that match what people search when they are comparing window tinting, vinyl wrap, and film services in San Diego CA.
+        </p>
+
+        <div class="faq-grid">
+          <div class="card faq-item">
+            <h3>How do I choose the right window tint in San Diego?</h3>
+            <p>Start with your goal, heat control, glare reduction, or privacy. Then match film type to your driving routine and where you park.</p>
+          </div>
+
+          <div class="card faq-item">
+            <h3>Is ceramic film worth it compared to standard tint?</h3>
+            <p>Ceramic film is often chosen for stronger heat rejection and clear visibility. It is a good fit for drivers who want comfort upgrades long term.</p>
+          </div>
+
+          <div class="card faq-item">
+            <h3>How long does automotive window tinting take?</h3>
+            <p>Most installs are completed the same day. The exact timing depends on the vehicle, glass layout, and the film option you choose.</p>
+          </div>
+
+          <div class="card faq-item">
+            <h3>Can I wash my car right after tinting?</h3>
+            <p>You can wash the exterior, but avoid rolling windows down until the film has time to cure. Your installer can give a simple timeline.</p>
+          </div>
+
+          <div class="card faq-item">
+            <h3>Does reflective window film make visibility worse at night?</h3>
+            <p>It depends on the film and the darkness level. A good recommendation balances glare control with safe night visibility.</p>
+          </div>
+
+          <div class="card faq-item">
+            <h3>What is chrome delete and why do people get it?</h3>
+            <p>Chrome delete changes bright trim to a sleek finish for a modern look. Many drivers do it to match wheels, wrap colors, or a sport build.</p>
+          </div>
+
+          <div class="card faq-item">
+            <h3>Is vinyl wrap safe for factory paint?</h3>
+            <p>Yes, when installed correctly it helps protect paint. Removal is also cleaner when the wrap has been cared for properly.</p>
+          </div>
+
+          <div class="card faq-item">
+            <h3>Can businesses use window graphics for branding?</h3>
+            <p>Yes. Window graphics and perforated film are popular for storefronts and business vehicles because they advertise while staying clean and readable.</p>
+          </div>
+
+          <div class="card faq-item">
+            <h3>What is fleet vehicle tinting used for?</h3>
+            <p>Fleet tinting improves driver comfort and keeps vehicles consistent. It also reduces sun exposure on equipment stored inside the vehicle.</p>
+          </div>
+
+          <div class="card faq-item">
+            <h3>Do you offer mobile window tinting options?</h3>
+            <p>Mobile car services can be a good fit for busy schedules. It is best to confirm the location setup so installation conditions stay controlled.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="cta-section" id="cta">
+    <div class="cta-box">
+      <div>
+        <h2>Ready To Upgrade Your Comfort And Style</h2>
+        <p>
+          Tell us what you drive and what you want to fix first, heat, glare, privacy, or appearance. We will point you to the right service,
+          whether it is window tinting, ceramic film, vinyl wrap, chrome delete, or windshield protection. You get a clear plan and no confusing sales talk.
+        </p>
+        <p class="cta-meta">
+          Tip: share your typical driving hours and whether your car sits in direct sun. That one detail helps choose the right film fast.
+        </p>
+      </div>
+
+      <div>
+        <button class="btn-primary" style="width: 100%; text-align: center; margin-bottom: 0.75rem;"
+          onclick="window.location.href='https://redlinecustomsco.com/contact-us/'">
+          Contact Redline Customs
+        </button>
+        <p style="font-size: 0.92rem; color: rgba(229, 231, 235, 0.92);">
+          Prefer browsing first? You can also explore services and updates on the main website.
+          <a href="https://redlinecustomsco.com/" target="_blank" rel="noopener" style="color:#f9fafb; text-decoration: underline;">Visit the main site</a>
+        </p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span>Copyright 2026 All rights reserved.</span>
+      <div class="social-row">
+        <a href="https://share.google/kf8XcaJHjqNzSzypc" target="_blank" rel="noopener">Google</a>
+        <a href="https://www.facebook.com/people/Redline-Customs/61569117152989/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/redlinecustoms.sd/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@redlinecustoms.la" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </footer>
+  </section>
+</body>
+</html>
